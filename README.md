@@ -14,3 +14,26 @@ MYSQL_DATABASE=your_database_name
 ```
 ### 3. Start the development server
 npm run dev
+
+### 4. Mysql Schema
+```
+CREATE TABLE IF NOT EXISTS users (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      email VARCHAR(255) NOT NULL UNIQUE,
+      password VARCHAR(255) NOT NULL,
+      name VARCHAR(255),
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE customer (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  company_name VARCHAR(255) NOT NULL,
+  phone VARCHAR(12) NOT NULL,
+  profile_picture_url VARCHAR(500),
+  contract_start_date DATE NOT NULL,
+  contract_expire_date DATE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
